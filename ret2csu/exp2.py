@@ -12,7 +12,7 @@ write_addr = elf.got['write']
 read_addr = elf.got['read']
 write = elf.plt['write']
 main_addr = elf.symbols['main']
-bss = 0x601030
+
 csu1 = 0x40061A
 csu2 = 0x400600
 
